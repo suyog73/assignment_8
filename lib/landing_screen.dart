@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:assignment_8/helper/constants.dart';
 import 'package:assignment_8/screens/context_screen.dart';
 import 'package:assignment_8/screens/popup_screen.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class LandingScreen extends StatelessWidget {
           children: [
             MyButton(
               name: "PopUp Menu",
-              color: Colors.greenAccent,
+              color: kGreenColor,
               onTap: () {
                 Navigator.push(
                   context,
@@ -34,7 +35,7 @@ class LandingScreen extends StatelessWidget {
             SizedBox(height: 30),
             MyButton(
               name: "Context Menu",
-              color: Colors.pinkAccent,
+              color: kPinkColor,
               onTap: () {
                 Navigator.push(
                   context,

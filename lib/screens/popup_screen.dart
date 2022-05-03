@@ -4,6 +4,8 @@ import 'package:assignment_8/helper/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import '../widget/my_menu_item.dart';
+
 final GlobalKey<PopupMenuButtonState<int>> _key = GlobalKey();
 
 class PopUpScreen extends StatelessWidget {
@@ -15,7 +17,7 @@ class PopUpScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: kGreenColor,
         title: const Text(
           "Pop-Up Menu",
           style: TextStyle(fontSize: 22),
@@ -34,13 +36,14 @@ class PopUpScreen extends StatelessWidget {
                 // print(colors[idx]);
                 Fluttertoast.showToast(
                   msg: "You clicked: ${colors[idx].toString()}",
+                  backgroundColor: color[idx],
                 );
               },
               child: Container(
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: Colors.greenAccent, width: 2),
+                  border: Border.all(color: kGreenColor, width: 2),
                 ),
                 child: Text(
                   "Click Me",
@@ -52,21 +55,21 @@ class PopUpScreen extends StatelessWidget {
                   PopupMenuItem(
                     child: MyMenuItem(
                       name: "Red",
-                      color: Colors.redAccent,
+                      color: kRedColor,
                     ),
                     value: 0,
                   ),
                   PopupMenuItem(
                     child: MyMenuItem(
-                      name: "Yellow",
-                      color: Colors.yellowAccent,
+                      name: "Blue",
+                      color: kBlueColor,
                     ),
                     value: 1,
                   ),
                   PopupMenuItem(
                     child: MyMenuItem(
                       name: "Purple",
-                      color: Colors.purpleAccent,
+                      color: kPurpleColor,
                     ),
                     value: 2,
                   ),
@@ -75,30 +78,6 @@ class PopUpScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class MyMenuItem extends StatelessWidget {
-  const MyMenuItem({Key? key, required this.name, required this.color})
-      : super(key: key);
-  final String name;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(5),
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: color,
-        border: Border.all(color: Colors.black),
-        borderRadius: BorderRadius.circular(5),
-      ),
-      child: Text(
-        name,
-        style: TextStyle(fontSize: 16),
       ),
     );
   }
