@@ -16,7 +16,7 @@ class ContextScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: kPinkColor,
         title: const Text(
-          "Pop-Up Menu",
+          "Context Menu",
           style: TextStyle(fontSize: 22),
         ),
       ),
